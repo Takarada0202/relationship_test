@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class company extends Model
+class Company extends Model
 {
     use HasFactory;
 
@@ -16,7 +16,8 @@ class company extends Model
     protected $guarded = [];
 
 
-    public function divisions() : HasMany {
+    public function divisions(): HasMany
+    {
         return $this->hasMany(Division::class, 'company_id');
     }
 }

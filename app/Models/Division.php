@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use \App\Models\Company;
 
-class division extends Model
+class Division extends Model
 {
     use HasFactory;
 
@@ -18,11 +18,13 @@ class division extends Model
 
     //--
 
-    public function company() : BelongsTo {
-        return $this->belongsTo(Company::class,);
+    public function company(): BelongsTo
+    {
+        return $this->belongsTo(Company::class, );
     }
 
-    public function accountingUnits() : HasMany {
+    public function accountingUnits(): HasMany
+    {
         return $this->hasMany(AccountingUnit::class, 'division_id');
     }
 }

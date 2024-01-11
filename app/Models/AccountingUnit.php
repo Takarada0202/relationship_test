@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class accountingUnit extends Model
+class AccountingUnit extends Model
 {
     use HasFactory;
 
@@ -16,7 +16,8 @@ class accountingUnit extends Model
     protected $guarded = [];
 
 
-    public function division() : BelongsTo {
+    public function division(): BelongsTo
+    {
         return $this->belongsTo(Division::class);
     }
 

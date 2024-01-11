@@ -9,8 +9,8 @@
 <body>
     <p>index</p>
     <a href="{{ route('company') }}">company</a>
-
     <a href="{{ route('division') }}">division</a>
     <a href="{{ route('accountingUnit') }}">accountingUnit</a>
+    <a href="{{ route('product') }}">product</a>
 </body>
 </html>

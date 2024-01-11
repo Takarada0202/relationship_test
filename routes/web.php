@@ -15,12 +15,14 @@ use \App\Http\Controllers\RelationshipController;
 */
 
 Route::get('/', function () {
-    return view('index') ;
-}) ->name('index');
-Route::get('/company',[RelationshipController::class,'company']) ->name('company');
-Route::get('/division',[RelationshipController::class,'division']) ->name('division');
-Route::get('/accountingUnit',[RelationshipController::class,'accountingUnit']) ->name('accountingUnit');
+    return view('index');
+})->name('index');
+Route::get('/company', [RelationshipController::class, 'company'])->name('company');
+Route::get('/division', [RelationshipController::class, 'division'])->name('division');
+Route::get('/accountingUnit', [RelationshipController::class, 'accountingUnit'])->name('accountingUnit');
+Route::get('/product', [RelationshipController::class, 'product'])->name('product');
 
-Route::post('/createCompany',[RelationshipController::class,'createCompany']) ->name('createCompany');
-Route::post('/createDivision',[RelationshipController::class,'createDivision']) ->name('createDivision');
-Route::post('/createAccountingUnit',[RelationshipController::class,'createAccountingUnit']) ->name('createAccountingUnit');
+Route::post('/createCompany', [RelationshipController::class, 'createCompany'])->name('createCompany');
+Route::post('/createDivision', [RelationshipController::class, 'createDivision'])->name('createDivision');
+Route::post('/createAccountingUnit', [RelationshipController::class, 'createAccountingUnit'])->name('createAccountingUnit');
+Route::post('/createProduct', [RelationshipController::class, 'createProduct'])->name('createProduct');
