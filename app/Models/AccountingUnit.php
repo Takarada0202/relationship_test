@@ -19,9 +19,10 @@ class AccountingUnit extends Model
     public function division(): BelongsTo
     {
         return $this->belongsTo(Division::class);
+
     }
 
-    // public function products() : HasMany {
-    //     return $this->hasMany(Product::class, 'accounting_unit_id');
-    // }
+    public function products() : HasMany {
+        return $this->hasMany(Product::class, 'accounting_unit_id');
+    }
 }

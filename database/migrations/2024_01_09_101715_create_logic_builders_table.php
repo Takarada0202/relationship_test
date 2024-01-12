@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('logic_builders', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\ParsingBuilder::class, 'parsing_builder_id')->nullable();
+            $table->string('title');
             $table->timestamps();
         });
     }

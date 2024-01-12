@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('product_model_suffixes', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
             $table->timestamps();
         });
     }
@@ -21,6 +22,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('parsing_builder');
+        Schema::dropIfExists('product_model_suffixes');
     }
 };

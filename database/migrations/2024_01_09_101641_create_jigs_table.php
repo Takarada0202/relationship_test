@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('jigs', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->foreignIdFor(\App\Models\LogData::class, 'log_data_id');
             $table->timestamps();
         });
     }

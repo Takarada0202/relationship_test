@@ -18,4 +18,8 @@ class Product extends Model
     {
         return $this->belongsTo(AccountingUnit::class, 'accounting_unit_id');
     }
+    public function productModel(){
+        return $this->hasOne(ProductModel::class);
+    }
+
 }

@@ -8,9 +8,16 @@
 </head>
 <body>
     <p>index</p>
-    <a href="{{ route('company') }}">company</a>
-    <a href="{{ route('division') }}">division</a>
-    <a href="{{ route('accountingUnit') }}">accountingUnit</a>
-    <a href="{{ route('product') }}">product</a>
+    <a href="{{ route('company') }}">company</a><br>
+    <a href="{{ route('division') }}">division</a><br>
+    <a href="{{ route('accountingUnit') }}">accountingUnit</a><br>
+    <a href="{{ route('product') }}">product</a><br>
+    <a href="{{ route('productModelSuffix') }}">productModelSuffix</a><br>
+    <a href="{{ route('logicBuilder') }}">LogicBuilder</a><br>
+    <a href="{{ route('parsingBuilder') }}">parsingBuilder</a><br>
+    <a href="{{ route('diagnosis') }}">diagnosis</a><br>
+    <a href="{{ route('logData') }}">logData</a><br>
+    <a href="{{ route('jig') }}">jig</a><br>
+    <a href="{{ route('productModel') }}">productModel</a><br>
 </body>
 </html>
