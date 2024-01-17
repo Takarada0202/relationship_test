@@ -14,6 +14,13 @@
     <form action="{{ route('createDiagnosis') }}" method="POST">
         @csrf
         <input type="text" name="title">
+        <input list="productModel" name="productModel">
+
+        <datalist id="productModel">
+            @foreach ($productModels as $key => $productModel)
+                <option value="{{ $productModel->id }}">{{ $productModel->title }}</option>
+            @endforeach
+        </datalist>
         <input type="submit" value="submit">
     </form>
 </body>

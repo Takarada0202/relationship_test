@@ -14,13 +14,7 @@
     <form action="{{ route('createParsingBuilder') }}" method="POST">
         @csrf
         <input type="text" name="title">
-        <input list="logicBuilder" name="logicBuilder">
 
-        <datalist id="logicBuilder">
-            @foreach ($logicBuilders as $key => $logicBuilder)
-                <option value="{{ $logicBuilder->id }}">{{ $logicBuilder->title }}</option>
-            @endforeach
-        </datalist>
         <input type="submit" value="submit">
     </form>
 </body>

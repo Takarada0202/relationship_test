@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('parsing_builders', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignIdFor(\App\Models\Logicbuilder::class, 'logic_builder_id')->nullable();
             $table->timestamps();
         });
     }

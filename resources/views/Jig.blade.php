@@ -14,11 +14,11 @@
     <form action="{{ route('createJig') }}" method="POST">
         @csrf
         <input type="text" name="title">
-        <input list="logData" name="logData">
+        <input list="productModel" name="productModel">
 
-        <datalist id="logData">
-            @foreach ($logDatas as $key => $logData)
-                <option value="{{ $logData->id }}">{{ $logData->title }}</option>
+        <datalist id="productModel">
+            @foreach ($productModels as $key => $productModel)
+                <option value="{{ $productModel->id }}">{{ $productModel->title }}</option>
             @endforeach
         </datalist>
         <input type="submit" value="submit">

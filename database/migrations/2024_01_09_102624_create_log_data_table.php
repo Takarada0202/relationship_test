@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->foreignIdFor(\App\Models\Diagnosis::class, 'diagnosis_id')->nullable();
+            $table->foreignIdFor(\App\Models\Jig::class, 'jig_id');
             $table->timestamps();
         });
     }

@@ -21,6 +21,13 @@
                 <option value="{{ $diagnosis->id }}">{{ $diagnosis->title }}</option>
             @endforeach
         </datalist>
+        <input list="jig" name="jig">
+
+        <datalist id="jig">
+            @foreach ($jigs as $key => $jig)
+                <option value="{{ $jig->id }}">{{ $jig->title }}</option>
+            @endforeach
+        </datalist>
         <input type="submit" value="submit">
     </form>
 </body>

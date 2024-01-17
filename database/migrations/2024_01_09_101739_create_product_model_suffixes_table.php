@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('product_model_suffixes', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->foreignIdFor(\App\Models\ProductModel::class, 'product_model_id');
             $table->timestamps();
         });
     }

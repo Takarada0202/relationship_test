@@ -15,12 +15,13 @@ class Jig extends Model
 
     protected $guarded = [];
 
-    public function logData(): BelongsTo
+    public function logData()
     {
-        return $this->belongsTo(LogData::class);
+        return $this->hasMany(LogData::class);
 
     }
-    public function productModel(){
-        return $this->hasOne(ProductModel::class);
+    public function productModel() :BelongsTo {
+        return $this->belongsTo(ProductModel::class);
     }
+
 }

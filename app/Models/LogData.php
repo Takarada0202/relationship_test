@@ -20,9 +20,8 @@ class LogData extends Model
         return $this->belongsTo(Diagnosis::class);
 
     }
-    public function jig(): HasMany
-    {
-        return $this->hasMany(Jig::class, 'company_id');
+    public function jig() :BelongsTo{
+        return $this->belongsTo(Jig::class);
     }
 
 }

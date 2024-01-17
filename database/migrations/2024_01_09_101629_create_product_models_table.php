@@ -15,11 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->foreignIdFor(\App\Models\Product::class, 'product_id')->nullable();
-            $table->foreignIdFor(\App\Models\Diagnosis::class, 'diagnosis_id')->nullable();
             $table->foreignIdFor(\App\Models\LogicBuilder::class, 'logic_builder_id')->nullable();
-            $table->foreignIdFor(\App\Models\ProductModelSuffix::class, 'product_model_suffix_id')->nullable();
-            $table->foreignIdFor(\App\Models\Jig::class, 'jig_id')->nullable();
-            $table->foreignIdFor(\App\Models\LogData::class, 'log_data_id')->nullable();
             $table->timestamps();
         });
     }

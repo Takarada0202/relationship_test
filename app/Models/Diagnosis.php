@@ -15,12 +15,13 @@ class Diagnosis extends Model
 
     protected $guarded = [];
 
-    public function productModel(){
-        return $this->hasOne(ProductModel::class);
+
+    public function productModel() :BelongsTo {
+        return $this->belongsTo(ProductModel::class);
     }
 
     public function logData() {
-        return $this->hasOne(LogData::class);
+        return $this->hasMany(LogData::class);
     }
 
 }

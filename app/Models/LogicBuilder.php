@@ -15,7 +15,8 @@ class LogicBuilder extends Model
     public function productModel() {
         return $this->hasMany(productModel::class);
     }
-    public function parsingBuilder() {
-        return $this->hasOne(ParsingBuilder::class);
+    public function parsingBuilder():BelongsTo {
+        return $this->belongsTo(ParsingBuilder::class);
     }
+
 }

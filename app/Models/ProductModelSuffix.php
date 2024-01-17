@@ -14,7 +14,7 @@ class ProductModelSuffix extends Model
 
     protected $guarded = [];
 
-    public function productModel() {
-        return $this->hasMany(productModel::class);
+    public function productModel() : BelongsTo {
+        return $this->belongsTo(productModel::class);
     }
 }

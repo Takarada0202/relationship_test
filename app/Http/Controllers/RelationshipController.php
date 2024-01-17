@@ -89,28 +89,30 @@ class RelationshipController extends Controller
 
     public function productModelSuffix()
     {
-
-        return view('ProductModelSuffix');
+        $productModels = productModel::get()->all();
+        return view('ProductModelSuffix',compact('productModels'));
     }
 
     public function createProductModelSuffix(Request $request)
     {
         ProductModelSuffix::create([
             'title' => $request->title,
+            'product_model_id' => $request->productModel,
         ]);
         return redirect()->route('index');
     }
 
     public function logicBuilder()
     {
-
-        return view('LogicBuilder');
+        $parsingBuilders = parsingBuilder::get()->all();
+        return view('LogicBuilder',compact('parsingBuilders'));
     }
 
     public function createLogicBuilder(Request $request)
     {
         LogicBuilder::create([
             'title' => $request->title,
+            'parsing_builder_id' => $request->parsingBuilder,
         ]);
         return redirect()->route('index');
     }
@@ -118,29 +120,28 @@ class RelationshipController extends Controller
     public function parsingBuilder()
     {
 
-        $logicBuilders = LogicBuilder::get()->all();
-        $parsingBuilders = parsingBuilder::get()->all();
-        return view('parsingBuilder', compact('logicBuilders', 'parsingBuilders'));
+        return view('parsingBuilder');
     }
 
     public function createparsingBuilder(Request $request)
     {
         parsingBuilder::create([
             'title' => $request->title,
-            'logic_builder_id' => $request->logicBuilder,
+
         ]);
         return redirect()->route('index');
     }
     public function diagnosis()
     {
-
-        return view('Diagnosis');
+        $productModels = productModel::get()->all();
+        return view('Diagnosis',compact('productModels'));
     }
 
     public function createDiagnosis(Request $request)
     {
         Diagnosis::create([
             'title' => $request->title,
+            'product_model_id'=>$request->productModel,
         ]);
         return redirect()->route('index');
     }
@@ -149,7 +150,9 @@ class RelationshipController extends Controller
 
         $diagnoses = Diagnosis::get()->all();
         $logDatas = LogData::get()->all();
-        return view('LogData', compact('diagnoses', 'logDatas'));
+
+        $jigs = Jig::get()->all();
+        return view('LogData', compact('diagnoses', 'logDatas','jigs'));
     }
 
     public function createLogData(Request $request)
@@ -157,6 +160,7 @@ class RelationshipController extends Controller
         LogData::create([
             'title' => $request->title,
             'diagnosis_id' => $request->diagnosis,
+            'jig_id'=>$request->jig,
         ]);
         return redirect()->route('index');
     }
@@ -164,16 +168,15 @@ class RelationshipController extends Controller
     public function jig()
     {
 
-        $logDatas = LogData::get()->all();
-        $jigs = Jig::get()->all();
-        return view('Jig', compact('logDatas', 'jigs'));
+        $productModels = productModel::get()->all();
+        return view('Jig', compact('productModels'));
     }
 
     public function createJig(Request $request)
     {
         Jig::create([
             'title' => $request->title,
-            'log_data_id' => $request->logData,
+            'product_model_id' => $request->productModel,
         ]);
         return redirect()->route('index');
     }
@@ -182,26 +185,17 @@ class RelationshipController extends Controller
     {
         $products = Product::get()->all();
         $logicBuilders = LogicBuilder::get()->all();
-        $diagnoses = Diagnosis::get()->all();
-        $jigs = Jig::get()->all();
-        $logDatas = LogData::get()->all();
-        $productModelSuffixes = productModelSuffix::get()->all();
+
         $productModels = ProductModel::get()->all();
-        return view('productModel', compact('logDatas', 'productModels','products','logicBuilders','diagnoses','jigs','productModelSuffixes'));
+        return view('productModel', compact( 'productModels','products','logicBuilders'));
     }
 
     public function createproductModel(Request $request)
     {
-        // return $request;
         ProductModel::create([
             'title' => $request ->title,
             'logic_builder_id'=> $request -> logicBuilder,
-            'jig_id'=> $request -> jig,
-            'product_model_suffix_id'=> $request -> productModelSuffix,
             'product_id' => $request->product,
-            'diagnosis_id'=> $request -> diagnosis,
-            'jig_id'=> $request -> jig,
-            'log_data_id' => $request->logData,
         ]);
         return redirect()->route('index');
     }

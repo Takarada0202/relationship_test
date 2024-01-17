@@ -12,12 +12,18 @@
     <a href="{{ route('division') }}">division</a><br>
     <a href="{{ route('accountingUnit') }}">accountingUnit</a><br>
     <a href="{{ route('product') }}">product</a><br>
-    <a href="{{ route('productModelSuffix') }}">productModelSuffix</a><br>
-    <a href="{{ route('logicBuilder') }}">LogicBuilder</a><br>
     <a href="{{ route('parsingBuilder') }}">parsingBuilder</a><br>
+    <a href="{{ route('logicBuilder') }}">LogicBuilder</a><br>
+    <a href="{{ route('productModel') }}">productModel</a><br>
+    <a href="{{ route('jig') }}">jig</a><br>
     <a href="{{ route('diagnosis') }}">diagnosis</a><br>
     <a href="{{ route('logData') }}">logData</a><br>
-    <a href="{{ route('jig') }}">jig</a><br>
-    <a href="{{ route('productModel') }}">productModel</a><br>
+
+
+    <a href="{{ route('productModelSuffix') }}">productModelSuffix</a><br>
+
+
+
+
 </body>
 </html>

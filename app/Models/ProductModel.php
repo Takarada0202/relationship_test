@@ -14,12 +14,8 @@ class ProductModel extends Model
 
     protected $guarded = [];
 
-    public function diagnosis() : BelongsTo {
-        return $this->belongsTo(Diagnosis::class);
-    }
-
-    public function productModelSuffixes() : BelongsTo {
-        return $this->belongsTo(ProductModelSuffix::class);
+    public function productModelSuffixes()  {
+        return $this->hasMany(ProductModelSuffix::class);
     }
 
     public function logicBuilder() : BelongsTo {
@@ -29,7 +25,11 @@ class ProductModel extends Model
 
         return $this->belongsTo(Product::class);
     }
-    public function jig() :BelongsTo {
-        return $this->belongsTo(Jig::class);
+
+    public function jig(){
+        return $this->hasMany(Jig::class);
+    }
+    public function diagnosis(){
+        return $this->hasMany(Diagnosis::class);
     }
 }

@@ -22,30 +22,6 @@
             @endforeach
         </datalist>
 
-        <input list="jig" name="jig">
-
-        <datalist id="jig">
-            @foreach ($jigs as $key => $jig)
-                <option value="{{ $jig->id }}">{{ $jig->title }}</option>
-            @endforeach
-        </datalist>
-
-        <input list="diagnosis" name="diagnosis">
-
-        <datalist id="diagnosis">
-            @foreach ($diagnoses as $key => $diagnosis)
-                <option value="{{ $diagnosis->id }}">{{ $diagnosis->title }}</option>
-            @endforeach
-        </datalist>
-
-        <input list="productModelSuffix" name="productModelSuffix">
-
-        <datalist id="productModelSuffix">
-            @foreach ($productModelSuffixes as $key => $productModelSuffix)
-                <option value="{{ $productModelSuffix->id }}">{{ $productModelSuffix->title }}</option>
-            @endforeach
-        </datalist>
-
         <input list="logicBuilder" name="logicBuilder">
 
         <datalist id="logicBuilder">
@@ -54,13 +30,7 @@
             @endforeach
         </datalist>
 
-        <input list="logData" name="logData">
 
-        <datalist id="logData">
-            @foreach ($logDatas as $key => $logData)
-                <option value="{{ $logData->id }}">{{ $logData->title }}</option>
-            @endforeach
-        </datalist>
         <input type="submit" value="submit">
     </form>
 </body>
